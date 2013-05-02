@@ -1,6 +1,6 @@
 === Tag Generator ===
 Contributors: Nikitian
-Tags: tag, tags, generate tag
+Tags: tag, tags, generate tag, posts, Post
 Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: 3.5
@@ -25,7 +25,7 @@ This plugin may generate tags for all or selected posts by Yahoo API. Supported 
 * Add support for more languages.
 * Localize interface.
 * Public plugin.
-* Autoadd tags - it custom property
+* Auto add tags - it custom property
 
 = 0.1 =
 * Start idea. Support only Russian language for text.
