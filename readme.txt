@@ -25,7 +25,7 @@ This plugin may generate tags for all or selected posts by Yahoo API. Supported 
 * Add support for more languages.
 * Localize interface.
 * Public plugin.
-* Autoadd tags - it custum property
+* Autoadd tags - it custom property
 
 = 0.1 =
 * Start idea. Support only Russian language for text.
