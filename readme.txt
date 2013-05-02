@@ -5,6 +5,7 @@ Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: 3.5
 License: GPLv2 or later
+Donate link: http://rezz.ru/TagGeneratorDonationLink
 
 Generates tags for posts, using Yahoo and Yandex API.
 
