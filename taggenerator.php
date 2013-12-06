@@ -2,7 +2,7 @@
 /*
   Plugin Name: Tag Generator
   Description: Generates tags for posts, using Yahoo and Yandex API. Supported text language: Russian, English, Polish, Ukrainian, German, French, Belorussian, Spanish, Italian, Bulgarian, Czech, Turkish, Romanian, Serbian.
-  Version: 0.1.1
+  Version: 0.1.2
   Author: Nikitian
   Author URI: http://nikitian.ru/
  */
@@ -10,6 +10,7 @@ class TagGenerator{
     public $pluginuid = 'taggenerator';
     public $default_language = null;
     public $use_title = null;
+    public $yandexkey = 'trnsl.1.1.20131206T094251Z.b51e11a5a422e13b.40d21e303b11a66d49609216926a325c0fddbbbe';
     public function TagGenerator(){
         $this->RegisterHooks();
         load_plugin_textdomain($this->pluginuid, PLUGINDIR.'/'.dirname(plugin_basename(__FILE__)).'/languages');
@@ -55,11 +56,13 @@ class TagGenerator{
         echo'<h2>'.__('Tag Generation',$this->pluginuid).' <a href="?page='.$_REQUEST['page'].'" class="button" style="font-size: 20px;" title="'.__('Return back',$this->pluginuid).'">&larr;</a></h2>';
         echo'<h3>'.__('Prefences',$this->pluginuid).'</h3>';
         include_once(dirname(__FILE__) . '/Yandex_Translate.php');
-        $translate = new Yandex_Translate();
+        $translate = new Yandex_Translate($this->yandexkey);
         $froms = $translate->yandexGet_FROM_Langs();
-        if(!empty($_POST) && array_key_exists('lang',$_POST)){
-            update_option($this->pluginuid.'_language', $_POST['lang']);
-            $this->default_language = $_POST['lang'];
+        if(!empty($_POST)) {
+            if(array_key_exists('lang',$_POST)) {
+                update_option($this->pluginuid.'_language', $_POST['lang']);
+                $this->default_language = $_POST['lang'];
+            }
             update_option($this->pluginuid.'_use_title', $_POST['use_title']);
             $this->use_title = $_POST['use_title'];
             if($_POST['auto_tag']){
@@ -111,7 +114,7 @@ class TagGenerator{
 
         if($this->default_language!='en'&&!property_exists($this, 'translator')){
             include_once(dirname(__FILE__) . '/Yandex_Translate.php');
-            $this->translator = new Yandex_Translate();
+            $this->translator = new Yandex_Translate($this->yandexkey);
         }
         if($text==''){
             //Build searched string
@@ -202,7 +205,9 @@ class TagGenerator{
             $has_tags = get_the_tags($object->ID);
             echo'<tr>
                 <td>'.$object->ID.'</td>
-                <th>'.$object->post_title.'</th>
+                <th>
+                    <a href="./post.php?post='.$object->ID.'&action=edit">'.$object->post_title.'</a>
+                </th>
                 <td>';
             if($has_tags){
                 foreach($has_tags as $tag){

@@ -4,9 +4,11 @@
  * Идеален для славянских языков, в частности русский <-> украинский
  */
 class Yandex_Translate {
-    protected $rootURL = 'http://translate.yandex.ru/tr.json';
+    //protected $rootURL = 'http://translate.yandex.ru/tr.json';
+    protected $rootURL = 'https://translate.yandex.net/api/v1.5/tr.json';
     protected $translatePath = '/translate';
     protected $langCodesPairsListPath = '/getLangs';
+    protected $key = null;
 
     /**
      * @var string - символ или тег конца абзаца
@@ -19,6 +21,10 @@ class Yandex_Translate {
      */
     public $langDelimiter = '-';
 
+    public function __construct($key) {
+        $this->key = $key;
+    }
+    
     protected $cURLHeaders = array(
             'User-Agent' => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0; .NET CLR 2.0.50727)",
             'Accept' => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -31,6 +37,7 @@ class Yandex_Translate {
 
     protected function yandexConnect($path, $transferData = array()) {
         $res = curl_init();
+        $transferData['key'] = $this->key;
         $url = $this->rootURL.$path.'?'.http_build_query($transferData);
         $options = array(
             CURLOPT_URL => $url,
