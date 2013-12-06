@@ -119,6 +119,8 @@ class Yandex_Translate {
         $rawTranslate = trim($rawTranslate, '"');
 
         $translate = str_replace('\n', $this->eolSymbol, $rawTranslate);
+        $ret = json_decode($translate, true);
+        return reset($ret['text']);
 
         return $translate;
 
