@@ -13,6 +13,11 @@ Generates tags for posts, using Yahoo and Yandex API.
 
 This plugin may generate tags for all or selected posts by Yahoo API. Supported text language: Russian, English, Polish, Ukrainian, German, French, Belorussian, Spanish, Italian, Bulgarian, Czech, Turkish, Romanian, Serbian. For support not only english language, using translator.
 
+== Requirements ==
+
+* PHP 5+
+* Extentions: cURL, iconv, json (if not build-in)
+
 == Installation ==
 
 1. Upload plugin to your blog.
