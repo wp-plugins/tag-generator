@@ -27,6 +27,10 @@ This plugin may generate tags for all or selected posts by Yahoo API. Supported 
 
 == Changelog ==
 
+= 0.1.3 =
+* Custom Yandex API key
+* Some stability fixes
+
 = 0.1.2.1 =
 * Stupid fix
 
