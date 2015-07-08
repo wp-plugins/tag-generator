@@ -3,7 +3,7 @@
 /*
   Plugin Name: Tag Generator
   Description: Generates tags for posts, using Yahoo and Yandex API. Supported text language: Russian, English, Polish, Ukrainian, German, French, Belorussian, Spanish, Italian, Bulgarian, Czech, Turkish, Romanian, Serbian.
-  Version: 0.1.3
+  Version: 0.1.3.1
   Author: Nikitian
   Author URI: http://nikitian.ru/
  */
