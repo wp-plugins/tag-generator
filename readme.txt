@@ -2,8 +2,8 @@
 Contributors: Nikitian
 Tags: tag, tags, generate tag, posts, Post
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 3.5
+Tested up to: 4.2.2
+Stable tag: 4.2.2
 License: GPLv2 or later
 Donate link: http://rezz.ru/TagGeneratorDonationLink
 
