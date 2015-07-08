@@ -152,6 +152,9 @@ class TagGenerator {
             }
             $tags = $this->YahooYqlTags($text);
             $ret = '';
+            if(is_string($tags)) {
+                $tags = array($tags);
+            }
             if (sizeof($tags) > 0) {
                 $tags = array_unique($tags);
                 if ($this->default_language != 'en') {
