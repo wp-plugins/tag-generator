@@ -2,8 +2,8 @@
 Contributors: Nikitian
 Tags: tag, tags, generate tag, posts, Post
 Requires at least: 3.0
-Tested up to: 4.2.3
-Stable tag: 4.2.3
+Tested up to: 4.2.4
+Stable tag: 4.2.4
 License: GPLv2 or later
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mail%40nikitian%2eru&lc=GB&item_name=WP%20plugin%20Tag%20generator&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 
